@@ -7,7 +7,7 @@ dispatchActions = require './dispatcher'
 
 initApp = (mountNode) ->
     subject = new Rx.Subject()
-    store = new <%= moduleName %>torage()
+    store = new <%= moduleName %>Storage()
     view = React.render <%= moduleName %>View({eventStream: subject}), mountNode
     dispatchActions(view, subject, store)
 
