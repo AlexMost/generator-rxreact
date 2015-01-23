@@ -5,7 +5,4 @@ class <%= moduleName %>Storage
     incrementClicksCount: ->
         @clicksCount += 1
 
-    getViewState: ->
-        {@clicksCount}
-
 module.exports = <%= moduleName %>Storage

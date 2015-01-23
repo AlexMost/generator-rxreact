@@ -7,13 +7,8 @@ dispatchActions = require './dispatcher'
 
 initApp = (mountNode) ->
     subject = new Rx.Subject()
-    store = new HelloStorage()
-
-    componentProps = store.getViewState()
-    componentProps.eventStream = subject
-
-    view = React.render <%= moduleName %>View(componentProps), mountNode
-
+    store = new <%= moduleName %>torage()
+    view = React.render <%= moduleName %>View({eventStream: subject}), mountNode
     dispatchActions(view, subject, store)
 
 
