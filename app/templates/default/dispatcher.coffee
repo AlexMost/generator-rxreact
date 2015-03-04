@@ -5,8 +5,8 @@ getViewState = (store) ->
     clicksCount: store.getClicksCount()
 
 
-dispatchActions = (view, subject, store) ->
-    incrementClickCountAction = subject
+dispatchActions = (view, eventStream, store) ->
+    incrementClickCountAction = eventStream
         .filter(({action}) -> action is "increment_click_count")
         .do(-> store.incrementClicksCount())
 
